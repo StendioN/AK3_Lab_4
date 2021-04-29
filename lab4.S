@@ -26,7 +26,9 @@ task1:
 	orr r1, r3
 	// (x1 | x2 / 2)/8
 	asr r0, #3
-	lsr r1, #3
+	asr r1, #1
+	asr r1, #1
+	asr r1, #1
 	// ~x3 ^ 1
 	eor r4, #1
 	eor r5, #1
@@ -35,7 +37,7 @@ task1:
 	lsl r5, #1
 	// (x1 | x2 / 2)/8 - 2(~x3 ^ 1) 
 	sub r0, r4
-	sub r1, r5 
+	sbc r1, r5 
 	bl correction
 	pop {pc}
 
